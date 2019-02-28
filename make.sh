@@ -2,6 +2,6 @@
 
 set -e
 
-docker build -t gcloud-pubsub-emulator:latest .
-docker push docker.io/marcelcorso/gcloud-pubsub-emulator:latest
-docker push docker.io/messagebird/gcloud-pubsub-emulator:latest
+sudo docker build -t acet/gcloud-pubsub-emulator:latest .
+sudo docker push acet/gcloud-pubsub-emulator:latest
+

@@ -11,9 +11,10 @@ RUN go get github.com/prep/pubsubc
 
 FROM google/cloud-sdk:alpine
 
-COPY --from=builder /usr/bin/wait-for /usr/bin
-COPY --from=builder /go/bin/pubsubc   /usr/bin
-COPY                run.sh            /run.sh
+COPY --from=builder /usr/bin/wait-for  /usr/bin
+COPY --from=builder /go/bin/pubsubc    /usr/bin
+COPY                run.sh             /run.sh
+COPY                logging.properties /
 
 RUN apk --update add openjdk7-jre netcat-openbsd && gcloud components install beta pubsub-emulator
 

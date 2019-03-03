@@ -8,4 +8,6 @@
 (/usr/bin/wait-for localhost:8681 -- env PUBSUB_EMULATOR_HOST=localhost:8681 /usr/bin/pubsubc -debug; nc -lkp 8682 >/dev/null) &
 
 # Start the PubSub emulator in the foreground.
-gcloud beta emulators pubsub start --host-port=0.0.0.0:8681 --log-http --verbosity=debug --user-output-enabled
+#gcloud beta emulators pubsub start --host-port=0.0.0.0:8681 --log-http --verbosity=debug --user-output-enabled
+
+java -Djava.util.logging.config.file="/logging.properties" -jar /google-cloud-sdk/platform/pubsub-emulator/lib/cloud-pubsub-emulator-0.1-SNAPSHOT-all.jar --host-port=0.0.0.0:8681 --log-http --verbosity=debug --user-output-enabled
